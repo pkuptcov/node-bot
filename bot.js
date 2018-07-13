@@ -13,7 +13,7 @@ function testConnection () {
         page.on('load', () => {
             const endTime = new Date().getTime();
             const loadTime = endTime - startTime;
-			loadTime < 60000 ? bot.sendMessage(loadTime / 1000) : bot.sendMessage('Загрузка сайта Петрович более 60 секунд');
+			loadTime < 60000 ? bot.sendMessage(chatId, loadTime / 1000) : bot.sendMessage(chatId, 'Загрузка сайта Петрович более 60 секунд');
         });
 
         await page.goto('https://petrovich.ru');
